@@ -1,7 +1,9 @@
+<div class="px-10">
+  <h1 class="text-lg font-bold">About</h1>
+  <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vel delectus numquam aliquid itaque nulla. Alias fugiat est, voluptatem commodi soluta, ad et eveniet odit rem perferendis porro, quidem iste.</p>
+   @if (duration() > 0) {
 
-  <input type="number" [value]="duration()" (change)="changeDuration($event)">
-  <input type="text" [value]="message()" (change)="changeMessage($event)">
-  @if (duration() >0 && message()!="") {
-
-    <app-counter [duration]="duration()" [message]="message()"></app-counter>
-  }
+    <p class="text-xs"> Numero de clientes  <app-counter [duration]="duration()" [message]="message()" /></p>
+   }
+      <app-wave-audio audioUrl="audio.mp3" />
+</div>

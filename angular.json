@@ -49,7 +49,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },"src/assets/audio.mp3"
             ],
             "styles": [
               "src/styles.css"
