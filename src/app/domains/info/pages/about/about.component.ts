@@ -1,18 +1,20 @@
 import { CommonModule } from "@angular/common";
 import { Component, signal } from "@angular/core";
-import { CounterComponent } from "../../../shared/components/counter/counter.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import { WaveAudioComponent } from '../../components/wave-audio/wave-audio.component';
+import { WaveAudioComponent } from "@info/components/wave-audio/wave-audio.component";
+import { CounterComponent } from "@shared/components/counter/counter.component";
+import { ShoppingCardComponent } from "@shared/components/shopping-card/shopping-card.component";
+import { HighlightDirective } from "@shared/directives/highlight.directive";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule,CounterComponent,ReactiveFormsModule,WaveAudioComponent],
+  imports: [CommonModule,CounterComponent,ReactiveFormsModule,WaveAudioComponent,ShoppingCardComponent,HighlightDirective],
   templateUrl: './about.component.html',
   styleUrls:[ './about.component.css']
 })
 export class AboutComponent {
-  duration = signal(1000);
+  duration = signal<number>(1000);
   message = signal('Hola');
 
   changeDuration(event: Event) {
