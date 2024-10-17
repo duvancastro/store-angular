@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input, signal, SimpleChanges } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [CommonModule ,ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css'
 })

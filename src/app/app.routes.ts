@@ -1,14 +1,33 @@
 import { Routes } from '@angular/router';
-import { ListComponent } from './domains/products/pages/list/list.component';
-import { AboutComponent } from './domains/info/pages/about/about.component';
+import { LayaoutComponent } from '@shared/components/layaout/layaout.component';
 
 export const routes: Routes = [
   {
-    path:'',
-  component:ListComponent
-},
-{
-  path:'about',
-  component: AboutComponent
-}
+    path: '',
+    component: LayaoutComponent,
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./domains/products/pages/list/list.component'),
+      },
+      {
+        path: 'about',
+        loadComponent: () =>
+          import('./domains/info/pages/about/about.component'),
+      },
+      {
+        path: 'product/:id',
+        loadComponent: () =>
+          import(
+            './domains/products/pages/product-detail/product-detail.component'
+          ),
+      },
+    ],
+  },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./domains/info/pages/not-found/not-found.component'),
+  },
 ];

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, ElementRef, Input, signal, ViewChild,  } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import WaveSurfer from 'wavesurfer.js';
@@ -6,8 +6,7 @@ import WaveSurfer from 'wavesurfer.js';
 @Component({
   selector: 'app-wave-audio',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule
-  ],
+  imports: [ReactiveFormsModule],
   templateUrl: './wave-audio.component.html',
   styleUrl: './wave-audio.component.css'
 })

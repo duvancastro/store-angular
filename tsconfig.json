@@ -44,8 +44,11 @@
       "@shared/utils/*": [
         "./src/app/domains/shared/utils/*"
       ],
+      "@shared/models/*":["./src/app/domains/shared/models/*"],
       "@model/*":["./src/app/models/*"],
-      "@info/*":["./src/app/domains/info/*"]
+      "@info/*":["./src/app/domains/info/*"],
+      "@products/*":["./src/app/domains/products/*"],
+      
     }
   },
   "angularCompilerOptions": {

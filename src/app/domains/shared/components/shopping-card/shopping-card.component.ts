@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import { Component, inject, Input, Signal, Output, EventEmitter } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { IProduct } from "@shared/models/product.model";
@@ -8,7 +8,7 @@ import { CartService } from "@shared/services/cart.service";
 @Component({
   selector: 'app-shopping-card',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './shopping-card.component.html',
   styleUrl: './shopping-card.component.css',
 })

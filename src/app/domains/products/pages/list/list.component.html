@@ -1,10 +1,14 @@
-<div class="container mx-auto">
-  <app-header  />
-  <h3>{{cart().length}}</h3>
+<div class="flex space-x-4 mt-4">
+  <div class="w-80">
+    <ul> @for (category of categories(); track $index) {
+      <li><a routerLink="/"[queryParams]="{category_id: category.id}">{{category.name}}</a></li>
+      }
+    </ul>
+  </div>
   <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
     @for (product of products(); track $index) {
 
-        <app-product [product]="product" (addToCart)="addToCart($event)" />
+    <app-product [product]="product" (addToCart)="addToCart($event)" />
     }
   </div>
 </div>
