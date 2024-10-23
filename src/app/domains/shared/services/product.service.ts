@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http"
 import { Injectable, inject } from "@angular/core"
-import { IProduct } from "@shared/models/product.model"
+import { ICreateProduct, IProduct } from "@shared/models/product.model"
 import { Observable } from "rxjs"
 
 @Injectable({
@@ -20,6 +20,14 @@ export class ProductService {
 getOneProduct(id: string):Observable<IProduct>{
   return this.http.get<IProduct>(`https://api.escuelajs.co/api/v1/products/${id}`)
 
+}
+
+createProduct(creteProducto:ICreateProduct):Observable<IProduct>{
+  return this.http.post<IProduct>(`https://api.escuelajs.co/api/v1/products`, creteProducto)
+}
+
+updateProduct(id: string, updateProducto: IProduct):Observable<IProduct>{
+  return this.http.put<IProduct>(`https://api.escuelajs.co/api/v1/products/${id}`, updateProducto)
 }
 
 }

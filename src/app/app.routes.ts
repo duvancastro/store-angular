@@ -17,6 +17,13 @@ export const routes: Routes = [
           import('./domains/info/pages/about/about.component'),
       },
       {
+        path: 'product/create',
+        loadComponent: () =>
+          import(
+            './domains/products/pages/create-product/create-product.component'
+          ),
+      },
+      {
         path: 'product/:id',
         loadComponent: () =>
           import(

@@ -11,7 +11,10 @@ export interface IProduct {
   price: number;
   description: string;
   category: ICategory;
-  images: string[];
+  images: Array<string>;
   creationAt: string;
   updatedAt: string;
 }
+export type ICreateProduct = Omit<IProduct,'id'|'creationAt'|'updatedAt'|'category'>
+
+export type IUpdateProduct = Partial<ICreateProduct>

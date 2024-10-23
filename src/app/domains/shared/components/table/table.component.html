@@ -1,0 +1,27 @@
+<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr>
+      <th scope="col" class="px-6 py-3">#</th>
+      <th scope="col" class="px-6 py-3">Nombre</th>
+      <th scope="col" class="px-6 py-3">Correo</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of paginatedData; track $index) {
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+      <td class="px-6 py-4">{{ item.id }}</td>
+      <td class="px-6 py-4">{{ item.nombre }}</td>
+      <td class="px-6 py-4">{{ item.correo }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+<app-pagination 
+  [totalItems]="data.length" 
+  [maxVisiblePages]=5 
+  [itemsPerPage]="itemsPerPage()" 
+  [showItems]=[1,2,3,4,5,6,7,8,9]
+  (pageChange)="onPageChange($event)"
+  (showing)="showingItems($event)"
+  >
+</app-pagination>
